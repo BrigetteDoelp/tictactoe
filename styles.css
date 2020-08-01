@@ -10,11 +10,53 @@ main {
   justify-content: center;
   grid-template-columns: 180px 180px 180px;
   grid-template-rows: 180px 180px 180px;
-  border: 2px black;
 }
 
 .space {
-  border: 50px #000;
-  height: 100px;
-  width: 100px;
+  border: 2px solid #000;
+  /* height: 100px;
+  width: 100px; */
 }
+
+.one {
+  border-top: none;
+  border-left: none;
+}
+
+.two {
+  border-top: none;
+}
+
+.three {
+  border-top: none;
+  border-right: none;
+}
+
+.four {
+  border-left: none;
+}
+
+.six {
+  border-right: none;
+}
+
+.seven {
+  border-left: none;
+  border-bottom: none;
+}
+
+.eight {
+  border-bottom: none;
+}
+
+.nine {
+  border-right: none;
+  border-bottom: none;
+}
+
+h1 {
+  justify-content: center;
+}
+
+
+/* . */
