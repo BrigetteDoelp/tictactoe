@@ -1,45 +1,20 @@
 class Game {
   constructor() {
-    this.p1 = new Player(1, '☠️');
-    this.p2 = new Player(2, '🖤');
-    this.board = [['','',''],['','',''],['','','']];
-    this.turn = true;
-  };
-
-  gameLogic() {
-    //this area keeps the logic that is needed to play the game
-  };
-
-  turnTracker() {
-
-  };
-
-  endConditions() {
-
-    //if 
-  };
-
-  updateWins() {
-
-  };
-
-  resetBoard() {
-
-  };
-
-  p1turn() {
-
-  };
-
-  p2turn() {
-
+    this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
   }
+
+  gameLogic(clickedSpace) {
+    for (var i = 0; i < this.board.length; i++) {
+      for (var z = 0; z < gameSpace.length; z++) {
+        if (clickedSpace.classList.contains(this.board[i])) {
+          console.log(this.board[i]);
+          console.log(gameSpace[i]);
+        }
+      }
+    }
+  };
+
+
+
+
 }
-
-
-
-
-
-//need methods ;
-//gameData() ; turnTracker() ; endConditions() ; updateWins() ; resetBoard()
-//
