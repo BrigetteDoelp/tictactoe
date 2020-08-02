@@ -34,13 +34,23 @@ class Game {
   }
 
 
-  horizontalWin(player, row) {
-    var index = row * 3
-    
+  horizontalWin(row) {
+    var indexRow = row * 3;
+    for (var i = indexRow; i < indexRow + 3; i++) {
+      if (this.board[i] !== this.turn) {
+        return false
+      }
+    }
+    return true
   };
 
-  verticalWin() {
-
+  verticalWin(column) {
+    for (var i = column; i < column + 7; i += 3) { //OR i < column + 6
+      if (this.board[i] !== this.turn) {
+        return false
+      }
+    }
+    return true
   };
 
   diagonalWin() {
@@ -48,7 +58,7 @@ class Game {
   };
 
 
-
+//
 
 
 
