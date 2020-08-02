@@ -15,6 +15,8 @@ class Game {
           console.log(gameSpace[i]);
           gameSpace[i].innerHTML = this.toggleTurn()
           this.board[i] = this.turn
+          // this.checkForWin();
+          console.log(this.checkForWin())
         }
       }
     }
@@ -30,7 +32,15 @@ class Game {
   };
 
   checkForWin() {
-
+    for (var i = 0; i < 3; i++) {
+      if(this.horizontalWin(i) || this.verticalWin(i)) {
+        return true
+      }
+    }
+    if (this.diagonalWinLTR() || this.diagonalWinRTL()) {
+      return true
+    }
+    return false
   }
 
 
@@ -53,13 +63,27 @@ class Game {
     return true
   };
 
-  diagonalWin() {
+  diagonalWinLTR() {
+    for (var i = 0; i < this.board.length; i += 4) {
+      if (this.board[i] !== this.turn) {
+          return false
+        }
+      }
+      return true
+    }
 
-  };
+
+    diagonalWinRTL() {
+      for (var i = 2; i < 7; i += 2) {
+        if (this.board[i] !== this.turn) {
+            return false
+          }
+        }
+        return true
+    }
+
+
+};
 
 
 //
-
-
-
-}
