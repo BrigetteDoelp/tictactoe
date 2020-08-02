@@ -3,9 +3,8 @@ class Game {
     this.p1 = new Player(1, '☠️');
     this.p2 = new Player(2, '🖤');
     this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-    this.topRow = []
-    this.turn = true;
-    this.winConditions = [];
+    this.turn = false;
+    this.winConditions = []; //[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]
   }
 
   clickLogic(clickedSpace) {
@@ -28,11 +27,27 @@ class Game {
     } else {
       return newGame.p2.token
     }
+  };
+
+  checkForWin() {
+
   }
 
-  // markGameBoard() {
-  //   gameSpace[i].innerText = '☠️'
-  // }
+
+  horizontalWin(player, row) {
+    var index = row * 3
+    
+  };
+
+  verticalWin() {
+
+  };
+
+  diagonalWin() {
+
+  };
+
+
 
 
 
