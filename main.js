@@ -14,14 +14,14 @@ var newGame = new Game;
 
 gameBoard.addEventListener('click', updateSpace);
 
-function checkSpace(event) {
-  newGame.gameLogic(event.target)
-};
-
 function updateSpace(event) {
   var spaceClicked = newGame.clickLogic(event.target)
-
 }
+//if innerHTML == either token, return. have this be a check space function
+//for checking game board for wins, have to update the this.board key value pair as well
+//spaces are going to be changed to x or o. dual win conditions for each one?? o jeeez
+//add ID to space when adding token?? jesus. idk. gonna have to experiment
+//then win conditions are going to be a Mess lol oh jeez.
 
 
 
