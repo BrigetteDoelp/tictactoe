@@ -1,0 +1,65 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.game-board {
+  display: grid;
+  margin-top: 25px;
+  justify-content: center;
+  grid-template-columns: 180px 180px 180px;
+  grid-template-rows: 180px 180px 180px;
+}
+
+.space {
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100px;
+  width: 100px; */
+}
+
+.one {
+  border-top: none;
+  border-left: none;
+}
+
+.two {
+  border-top: none;
+}
+
+.three {
+  border-top: none;
+  border-right: none;
+}
+
+.four {
+  border-left: none;
+}
+
+.six {
+  border-right: none;
+}
+
+.seven {
+  border-left: none;
+  border-bottom: none;
+}
+
+.eight {
+  border-bottom: none;
+}
+
+.nine {
+  border-right: none;
+  border-bottom: none;
+}
+
+h1 {
+  justify-content: center;
+}
+
+
+/* . */
