@@ -3,6 +3,7 @@ class Game {
     this.p1 = new Player(1, '☠️');
     this.p2 = new Player(2, '🖤');
     this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    this.topRow = []
     this.turn = true;
     this.winConditions = [];
   }
@@ -11,9 +12,10 @@ class Game {
     for (var i = 0; i < this.board.length; i++) {
       for (var z = 0; z < gameSpace.length; z++) {
         if (clickedSpace.classList.contains(this.board[i])) {
-          // console.log(this.board[i]);
-          // console.log(gameSpace[i]);
+          console.log(this.board[i]);
+          console.log(gameSpace[i]);
           gameSpace[i].innerHTML = this.toggleTurn()
+          this.board[i] = this.turn
         }
       }
     }
