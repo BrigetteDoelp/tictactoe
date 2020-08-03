@@ -22,11 +22,13 @@ class Game {
     for (var i = 0; i < 3; i++) {
       if (this.horizontalWin(i) || this.verticalWin(i)) {
         console.log(true)
+        this.updatePlayerWins()
         return true
       }
     }
       if (this.diagonalWinLTR() || this.diagonalWinRTL()) {
         console.log(true)
+        this.updatePlayerWins()
         return true
       }
       console.log(false)
@@ -45,7 +47,6 @@ class Game {
 
   verticalWin(column) {
     for (var i = column; i < column + 7; i += 3) {
-        console.log(i)
       if (this.board[i] !== this.p1Turn) {
         return false;
       }
@@ -60,8 +61,7 @@ class Game {
         }
       }
       return true
-    }
-
+   };
 
     diagonalWinRTL() {
       for (var i = 2; i < 7; i += 2) {
@@ -70,6 +70,10 @@ class Game {
           }
         }
         return true
+    };
+
+    updatePlayerWins() {
+      this.currentPlayer.wins++
     }
 
 
