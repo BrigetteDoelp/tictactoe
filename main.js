@@ -25,12 +25,14 @@ function updateBoard() {
   // event.target.innerHTML = newGame.toggleTurn()
 }
 
-function updateSpaceClicked() {
+function updateSpaceClicked(event) {
   for (var i = 0; i < gameSpaces.length; i++) {
-    
+    if (gameSpaces[i] === event.target) {
+      newGame.updateSpace(i)
+      updateBoard()
+    }
   }
-  newGame.updateSpace()
-  updateBoard()
+
 }
 
 //add ID to space when adding token?? jesus. idk. gonna have to experiment
