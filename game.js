@@ -22,13 +22,13 @@ class Game {
     for (var i = 0; i < 3; i++) {
       if (this.horizontalWin(i) || this.verticalWin(i)) {
         console.log(true)
-        this.updatePlayerWins()
+        this.addPlayerWin()
         return true
       }
     }
       if (this.diagonalWinLTR() || this.diagonalWinRTL()) {
         console.log(true)
-        this.updatePlayerWins()
+        this.addPlayerWin()
         return true
       }
       console.log(false)
@@ -72,7 +72,7 @@ class Game {
         return true
     };
 
-    updatePlayerWins() {
+    addPlayerWin() {
       this.currentPlayer.wins++
     }
 
