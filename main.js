@@ -13,9 +13,9 @@ var botRight = document.querySelector('.br');
 
 var newGame = new Game;
 
-gameBoard.addEventListener('click', updateBoard);
+gameBoard.addEventListener('click', updateSpaceClicked);
 
-function updateBoard(event) {
+function updateBoard() {
   for (var i = 0; i < newGame.board.length; i++) {
     if (typeof newGame.board[i] === 'boolean') {
       gameSpaces[i].innerHTML = newGame.board[i] ? newGame.p1.token : newGame.p2.token
@@ -26,7 +26,11 @@ function updateBoard(event) {
 }
 
 function updateSpaceClicked() {
-
+  for (var i = 0; i < gameSpaces.length; i++) {
+    
+  }
+  newGame.updateSpace()
+  updateBoard()
 }
 
 //add ID to space when adding token?? jesus. idk. gonna have to experiment
