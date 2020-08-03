@@ -1,5 +1,6 @@
 var gameBoard = document.querySelector('.game-board');
-var gameSpace = document.querySelectorAll('.space');
+var gameSpaces = document.querySelectorAll('.space');
+//potentially remove below
 var topLeft = document.querySelector('.one');
 var topMid = document.querySelector('.tm');
 var topRight = document.querySelector('.tr');
@@ -12,10 +13,26 @@ var botRight = document.querySelector('.br');
 
 var newGame = new Game;
 
-gameBoard.addEventListener('click', updateSpace);
+gameBoard.addEventListener('click', updateSpaceClicked);
 
-function updateSpace(event) {
-  var spaceClicked = newGame.clickLogic(event.target)
+function updateBoard() {
+  for (var i = 0; i < newGame.board.length; i++) {
+    if (typeof newGame.board[i] === 'boolean') {
+      gameSpaces[i].innerHTML = newGame.board[i] ? newGame.p1.token : newGame.p2.token
+    }
+  }
+  // var spaceClicked = newGame.clickLogic(event.target)
+  // event.target.innerHTML = newGame.toggleTurn()
+}
+
+function updateSpaceClicked(event) {
+  for (var i = 0; i < gameSpaces.length; i++) {
+    if (gameSpaces[i] === event.target) {
+      newGame.updateSpace(i)
+      updateBoard()
+    }
+  }
+
 }
 
 //add ID to space when adding token?? jesus. idk. gonna have to experiment
