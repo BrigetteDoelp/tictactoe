@@ -5,7 +5,6 @@ class Game {
     this.currentPlayer = this.p1;
     this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
     this.p1Turn = true;
-    this.winConditions = []; //[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]
   }
 
   updateSpace(index) {
@@ -18,30 +17,6 @@ class Game {
     this.p1Turn = !this.p1Turn
     this.currentPlayer = this.p1Turn ? this.p1 : this.p2
   }
-
-  // clickLogic(clickedSpace) {
-  //   for (var i = 0; i < this.board.length; i++) {
-  //     for (var z = 0; z < gameSpace.length; z++) {
-  //       if (clickedSpace.classList.contains(this.board[i])) {
-  //         console.log(this.board[i]);
-  //         console.log(gameSpace[i]);
-  //         // gameSpace[i].innerHTML = this.toggleTurn()
-  //         this.board[i] = this.turn
-  //         // this.checkForWin();
-  //         console.log(this.checkForWin())
-  //       }
-  //     }
-  //   }
-  // };
-
-  // toggleTurn() {
-  //   this.turn = !this.turn
-  //   if (this.turn) {
-  //     return newGame.p1.token
-  //   } else {
-  //     return newGame.p2.token
-  //   }
-  // };
 
   checkForWin() {
     for (var i = 0; i < 3; i++) {
