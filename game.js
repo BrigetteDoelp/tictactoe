@@ -10,6 +10,7 @@ class Game {
 
   updateSpace(index) {
     this.board[index] = this.currentPlayer === this.p1
+    this.checkForWin()
     this.updateTurn()
   };
 
@@ -44,16 +45,18 @@ class Game {
 
   checkForWin() {
     for (var i = 0; i < 3; i++) {
-      if(this.horizontalWin(i) || this.verticalWin(i)) {
+      if (this.horizontalWin(i) || this.verticalWin(i)) {
+        console.log(true)
         return true
       }
     }
-    if (this.diagonalWinLTR() || this.diagonalWinRTL()) {
-      return true
-    }
-    return false
-  }
-
+      if (this.diagonalWinLTR() || this.diagonalWinRTL()) {
+        console.log(true)
+        return true
+      }
+      console.log(false)
+      return false
+  };
 
   horizontalWin(row) {
     var indexRow = row * 3;
@@ -66,12 +69,13 @@ class Game {
   };
 
   verticalWin(column) {
-    for (var i = column; i < column + 7; i += 3) { //OR i < column + 6
-      if (this.board[i] !== this.p1turn) {
-        return false
+    for (var i = column; i < column + 7; i += 3) {
+        console.log(i)
+      if (this.board[i] !== this.p1Turn) {
+        return false;
       }
     }
-    return true
+    return true;
   };
 
   diagonalWinLTR() {
