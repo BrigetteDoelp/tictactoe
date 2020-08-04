@@ -6,12 +6,12 @@ class Player {
     this.retrieveWinsFromStorage()
   }
   saveWinsToStorage() {
-
+    localStorage.setItem(`storedP${this.id}Wins`, this.wins)
   }
   retrieveWinsFromStorage() {
-    var storedPlayer = localStorage.getItem(`storedP${this.id}`)
-    if (storedPlayer !== null) {
-      this.wins = storedPlayer
+    var retrievedStoredWins = localStorage.getItem(`storedP${this.id}Wins`)
+    if (retrievedStoredWins !== null) {
+      this.wins = retrievedStoredWins
     }
   }
 };
