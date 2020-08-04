@@ -15,10 +15,9 @@ class Game {
     if (this.checkForWin()) {
       this.addPlayerWin()
       this.currentPlayer.saveWinsToStorage()
-      setTimeout((function() {
-        this.resetGame()
-        onReset()
-      }).bind(this), 1000)
+      this.delayReset(onReset)
+    } else if (this.checkForDraw()) {
+      this.delayReset(onReset)
     }
     this.updateTurn()
   };
@@ -38,6 +37,15 @@ class Game {
         return true
       }
       return false
+  };
+
+  checkForDraw() {
+    for (var i = 0; i < this.board.length; i++) {
+      if (typeof this.board[i] !== 'boolean') {
+        return false
+      }
+    }
+    return true
   };
 
   horizontalWin(row) {
@@ -85,6 +93,13 @@ class Game {
       this.currentPlayer = this.p1;
       this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
       this.p1Turn = true;
+    }
+
+    delayReset(onReset) {
+      setTimeout((function() {
+        this.resetGame()
+        onReset()
+      }).bind(this), 1000)
     }
 
 };
