@@ -9,7 +9,11 @@ class Game {
 
   updateSpace(index) {
     this.board[index] = this.currentPlayer === this.p1
-    this.checkForWin()
+    if (this.checkForWin()) {
+      this.addPlayerWin()
+      this.currentPlayer.saveWinsToStorage()
+      this.resetGame()
+    }
     this.updateTurn()
   };
 
@@ -21,19 +25,12 @@ class Game {
   checkForWin() {
     for (var i = 0; i < 3; i++) {
       if (this.horizontalWin(i) || this.verticalWin(i)) {
-        // console.log(true)
-        this.addPlayerWin()
-        this.currentPlayer.saveWinsToStorage()
         return true
       }
     }
       if (this.diagonalWinLTR() || this.diagonalWinRTL()) {
-        // console.log(true)
-        this.addPlayerWin()
-        this.currentPlayer.saveWinsToStorage()
         return true
       }
-      // console.log(false)
       return false
   };
 
@@ -77,6 +74,12 @@ class Game {
     addPlayerWin() {
       this.currentPlayer.wins++
     };
+
+    resetGame() {
+      this.currentPlayer = this.p1;
+      this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+      this.p1Turn = true;
+    }
 
 };
 
