@@ -7,15 +7,18 @@ class Game {
     this.p1Turn = true;
   }
 
-  updateSpace(index) {
+  updateSpace(index, onReset) {
     if (typeof this.board[index] === 'boolean') {
       return
     }
-    this.board[index] = this.currentPlayer === this.p1
+    this.board[index] = (this.currentPlayer === this.p1)
     if (this.checkForWin()) {
       this.addPlayerWin()
       this.currentPlayer.saveWinsToStorage()
-      // setTimeout(this.resetGame.bind(this), 1000)
+      setTimeout((function() {
+        this.resetGame()
+        onReset()
+      }).bind(this), 1000)
     }
     this.updateTurn()
   };
@@ -78,11 +81,11 @@ class Game {
       this.currentPlayer.wins++
     };
 
-    // resetGame() {
-    //   this.currentPlayer = this.p1;
-    //   this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-    //   this.p1Turn = true;
-    // }
+    resetGame() {
+      this.currentPlayer = this.p1;
+      this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+      this.p1Turn = true;
+    }
 
 };
 
