@@ -32,11 +32,12 @@ function updatePlayerWins() {
   //assign those to the innerText of the querySelectors
 }
 
-function resetGameBoard() {
-  for (var i = 0; i < newGame.board.length; i++) {
-    gameSpaces[i].innerHTML = ''
-  }
-}
+// function resetGameBoard() {
+//   for (var i = 0; i < newGame.board.length; i++) {
+//     gameSpaces[i].innerHTML = ''
+//   }
+// }
+
 
 
 
