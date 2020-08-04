@@ -21,17 +21,19 @@ class Game {
   checkForWin() {
     for (var i = 0; i < 3; i++) {
       if (this.horizontalWin(i) || this.verticalWin(i)) {
-        console.log(true)
+        // console.log(true)
         this.addPlayerWin()
+        this.currentPlayer.saveWinsToStorage()
         return true
       }
     }
       if (this.diagonalWinLTR() || this.diagonalWinRTL()) {
-        console.log(true)
+        // console.log(true)
         this.addPlayerWin()
+        this.currentPlayer.saveWinsToStorage()
         return true
       }
-      console.log(false)
+      // console.log(false)
       return false
   };
 
