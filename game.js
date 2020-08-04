@@ -6,13 +6,13 @@ class Game {
     this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
     this.p1Turn = true;
     this.messages = {
-      p1Turn: `🕸It\'s ${this.p1.token} turn!🕸`,
-      p2Turn: `🕸It\'s ${this.p2.token} turn!🕸`,
-      p1Wins: `🕸Player ${this.p1.token} wins!🕸`,
-      p2Wins: `🕸Player ${this.p1.token} wins!🕸`,
+      p1Turn: `🕸It\'s ${this.p1.token}'s turn!🕸`,
+      p2Turn: `🕸It\'s ${this.p2.token}'s turn!🕸`,
+      p1Wins: `🕸Player ${this.p1.token}'s wins!🕸`,
+      p2Wins: `🕸Player ${this.p2.token}'s wins!🕸`,
       draw: '🌒💫🔮🦇It\'s a draw!🦇🔮💫🌒',
-    }
-    this.currentMessage = this.messages.p1Turn
+    };
+    this.currentMessage = this.messages.p1Turn;
   }
 
   updateSpace(index, onReset) {
@@ -21,11 +21,15 @@ class Game {
     }
     this.board[index] = (this.currentPlayer === this.p1)
     if (this.checkForWin()) {
+      this.currentMessage = this.p1Turn ? this.messages.p1Wins : this.messages.p2Wins
       this.addPlayerWin()
       this.currentPlayer.saveWinsToStorage()
       this.delayReset(onReset)
+      return
     } else if (this.checkForDraw()) {
+      this.currentMessage = this.messages.draw
       this.delayReset(onReset)
+      return
     }
     this.updateTurn()
   };
@@ -33,6 +37,7 @@ class Game {
   updateTurn() {
     this.p1Turn = !this.p1Turn
     this.currentPlayer = this.p1Turn ? this.p1 : this.p2
+    this.currentMessage = this.p1Turn ? this.messages.p1Turn : this.messages.p2Turn
   }
 
   checkForWin() {
@@ -101,6 +106,7 @@ class Game {
       this.currentPlayer = this.p1;
       this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
       this.p1Turn = true;
+      this.currentMessage = this.messages.p1Turn
     }
 
     delayReset(onReset) {
