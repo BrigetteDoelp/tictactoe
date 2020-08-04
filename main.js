@@ -22,7 +22,7 @@ function updateView() {
 function updateSpaceClicked(event) {
   for (var i = 0; i < gameSpaces.length; i++) {
     if (gameSpaces[i] === event.target) {
-      newGame.updateSpace(i)
+      newGame.updateSpace(i, updateView)
       updateView()
     }
   }
@@ -31,14 +31,7 @@ function updateSpaceClicked(event) {
 function updatePlayerWins() {
   p1Wins.innerText = `${newGame.p1.wins} wins`;
   p2Wins.innerText = `${newGame.p2.wins} wins`;
-  //assign those to the innerText of the querySelectors
 }
-
-// function resetGameBoard() {
-//   for (var i = 0; i < newGame.board.length; i++) {
-//     gameSpaces[i].innerHTML = ''
-//   }
-// }
 
 
 
