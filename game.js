@@ -5,6 +5,14 @@ class Game {
     this.currentPlayer = this.p1;
     this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
     this.p1Turn = true;
+    this.messages = {
+      p1Turn: `🕸It\'s ${this.p1.token} turn!🕸`,
+      p2Turn: `🕸It\'s ${this.p2.token} turn!🕸`,
+      p1Wins: `🕸Player ${this.p1.token} wins!🕸`,
+      p2Wins: `🕸Player ${this.p1.token} wins!🕸`,
+      draw: '🌒💫🔮🦇It\'s a draw!🦇🔮💫🌒',
+    }
+    this.currentMessage = this.messages.p1Turn
   }
 
   updateSpace(index, onReset) {
