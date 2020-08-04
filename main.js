@@ -12,6 +12,8 @@ function updateView() {
   for (var i = 0; i < newGame.board.length; i++) {
     if (typeof newGame.board[i] === 'boolean') {
       gameSpaces[i].innerHTML = newGame.board[i] ? newGame.p1.token : newGame.p2.token
+    } else {
+      gameSpaces[i].innerHTML = ''
     }
   }
   updatePlayerWins()
