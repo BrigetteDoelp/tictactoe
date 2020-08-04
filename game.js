@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.p1 = new Player(1, '☠️');
-    this.p2 = new Player(2, '🎃');
+    this.p1 = this.getPlayer(1, '☠️');
+    this.p2 = this.getPlayer(2, '🎃');
     this.currentPlayer = this.p1;
     this.board = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
     this.p1Turn = true;
@@ -74,8 +74,16 @@ class Game {
 
     addPlayerWin() {
       this.currentPlayer.wins++
-    }
+    };
 
+    getPlayer(id, token) {
+      var newPlayer = new Player(id, token)
+      var storedPlayer = localStorage.getItem(`storedP${id}`)
+      if ( storedPlayer !== null) {
+        newPlayer.wins = storedPlayer
+      }
+      return newPlayer
+    };
 
 };
 
