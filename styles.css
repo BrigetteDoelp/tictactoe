@@ -1,7 +1,35 @@
+body {
+  background: #c31434;
+  background: -webkit-linear-gradient(to bottom, #240b36, #c31434);
+  background: linear-gradient(to bottom, #240b36, #c31434);
+}
+
 main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Creepster';
+  padding-bottom: 15px;
+  font-size: 50px;
+  color: #927fa1;
+}
+
+h2 {
+  color: #927fa1;
+  text-align: center;
+  font-family: 'Arvo';
+}
+
+div {
+  font-size: 100px;
+}
+
+.playericon {
+  font-size: 50px;
 }
 
 .game-board {
@@ -13,12 +41,10 @@ main {
 }
 
 .space {
-  border: 2px solid #000;
+  border: 2px solid #927fa1;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100px;
-  width: 100px; */
 }
 
 .one {
@@ -57,9 +83,6 @@ main {
   border-bottom: none;
 }
 
-h1 {
-  justify-content: center;
-}
 
 
 /* . */

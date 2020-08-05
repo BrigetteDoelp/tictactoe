@@ -6,26 +6,26 @@ var message = document.querySelector('h1');
 
 var newGame = new Game;
 
-window.onload = updateView
+window.onload = updateView;
 gameBoard.addEventListener('click', updateSpaceClicked);
 
 function updateView() {
   for (var i = 0; i < newGame.board.length; i++) {
     if (typeof newGame.board[i] === 'boolean') {
-      gameSpaces[i].innerHTML = newGame.board[i] ? newGame.p1.token : newGame.p2.token
+      gameSpaces[i].innerHTML = newGame.board[i] ? newGame.p1.token : newGame.p2.token;
     } else {
-      gameSpaces[i].innerHTML = ''
+      gameSpaces[i].innerHTML = '';
     }
   }
-  updatePlayerWins()
-  updateMessage()
+  updatePlayerWins();
+  updateMessage();
 };
 
 function updateSpaceClicked(event) {
   for (var i = 0; i < gameSpaces.length; i++) {
     if (gameSpaces[i] === event.target) {
-      newGame.updateSpace(i, updateView)
-      updateView()
+      newGame.updateSpace(i, updateView);
+      updateView();
     }
   }
 };
@@ -36,7 +36,7 @@ function updatePlayerWins() {
 };
 
 function updateMessage() {
-  message.innerText = newGame.currentMessage
+  message.innerText = newGame.currentMessage;
 };
 
 
