@@ -43,8 +43,30 @@ I was given six days to complete this project.
 
 ## A Look Under The Hood ##
 
+This project had heavy emphasis of keeping the `data model` and the `DOM` separate. We were to utilize our the `Game` class and the `Player` class to handle the logic of the game, and use the `main.js` file for the updating of the `DOM`. The `game.js` and `player.js` files are meant to handle the state of the game, while the `main.js` file handles the view of the game.
 
+For example, adding a win to a player's win counter. This is first done in the `game.js` file. It is a very simple method who's only purpose is to increase the win counter on the instantiation of the `Player` class by one. It is one line of code with a very specific job. This method is called in the more meaty method of `updateSpace()`. It only runs on a player's win. That `updateSpace()` method is then called in the `main.js` file, in the function found on `line 24`, `updateSpaceClicked`.
 
+Next, we want to look to the `updateView()` function. That is a function tasked with updating the view of the entire game board. It references the `Game` object as our `data model`, and updates the view based off of the `state` of the game. `updatePlayerWins()` is called within that function, and `updateView` is called inside of `updateSpaceClicked()`, ensuring that on every click, the view of the game reflects the state of the game in the  `data model`.
+
+## Programming Languages Used ##
+
+* JavaScript
+* HTML
+* CSS
+
+## Built With ##
+
+* Vanilla JavaScript
+* HTML & CSS
+
+## Comp Given ##
+
+https://frontend.turing.io/projects/module-1/tic-tac-toe-solo.html
+
+## Credits ##
+
+[Brigette Doelp](https://github.com/BrigetteDoelp)
 
 
 
