@@ -35,7 +35,7 @@ I was given six days to complete this project.
 
 ## Functionality ##
 
-![functionality of game]()
+![functionality of game](blob:https://imgur.com/4c783901-07b8-4b8f-ac34-21105c0e12a3)
 
 * When a space is clicked, the token assigned to that space is the token of the current player. The space can not be reassigned.
 * Upon a win, that player's win is logged under their column.
