@@ -2,6 +2,7 @@ var gameBoard = document.querySelector('.game-board');
 var gameSpaces = document.querySelectorAll('.space');
 var p1Wins = document.querySelector('.p1wins');
 var p2Wins = document.querySelector('.p2wins');
+var message = document.querySelector('h1');
 
 var newGame = new Game;
 
@@ -17,6 +18,7 @@ function updateView() {
     }
   }
   updatePlayerWins()
+  updateMessage()
 };
 
 function updateSpaceClicked(event) {
@@ -31,7 +33,11 @@ function updateSpaceClicked(event) {
 function updatePlayerWins() {
   p1Wins.innerText = `${newGame.p1.wins} wins`;
   p2Wins.innerText = `${newGame.p2.wins} wins`;
-}
+};
+
+function updateMessage() {
+  message.innerText = newGame.currentMessage
+};
 
 
 
