@@ -36,6 +36,12 @@ I was given six days to complete this project.
 
 ![functionality of game]()
 
+* When a space is clicked, the token assigned to that space is the token of the current player. The space can not be reassigned.
+* Upon a win, that player's win is logged under their column.
+* When a game is complete, either by win or draw, the game board is reset after a set amount of time.
+
+## A Look Under The Hood ##
+
 
 
 
